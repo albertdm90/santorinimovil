@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <title>Santorini</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link rel="stylesheet" href="./fontawesome/css/all.min.css">
+</head>
+<body>
+  <nav class="backgroundTransparent" role="navigation">
+    <div class="nav-wrapper container">
+      <a id="logo-container" href="#" class="brand-logo">
+        <img src="./images/logost.png" width="150px" alt="" style="margin-top: 5px;">
+      </a>
+    </div>
+  </nav>
+
+  <div class="" style="margin-bottom: 80px;">
+    <div class="section">
+
+
+      <div class="row backggroundPage">
+        <div class="col s2 indigo" style="height: 100vh;"></div>
+        <div class="col s10" style="height: 100vh;"></div>
+      </div>
+
+      <div class="row" id="divLoad"></div>
+
+    </div>
+    <br><br>
+  </div>
+
+  <footer class="page-footer blue-grey lighten-5 page-footer-icons">
+    <div class="container">
+      <div class="row">
+        <a href="./index.html">
+          <div class="col s2 center-align">
+            <i class="material-icons iconsFooter">home</i>
+            <p class="black-text pIcons">Inicio</p>
+          </div>
+        </a>
+        <a href="./fastfood.html">
+          <div class="col s3 center-align">
+            <i class="material-icons iconsFooter">fastfood</i>
+            <p class="black-text pIcons">Bebidas y comidas</p>
+          </div>
+        </a>
+        <a href="./training.html">
+          <div class="col s3 center-align">
+            <i class="material-icons iconsFooter">sports_soccer</i>
+            <p class="black-text pIcons">Entramientos</p>
+          </div>
+        </a>
+        <a href="./training.html">
+          <div class="col s2 center-align">
+            <i class="material-icons iconsFooter">list</i>
+            <p class="black-text pIcons">Servicios</p>
+          </div>
+        </a>
+        <a href="./help.html">
+          <div class="col s2 center-align">
+            <i class="material-icons iconsFooter">help_outline</i>
+            <p class="black-text pIcons">Ayuda</p>
+          </div>  
+        </a>
+      </div>
+    </div>
+  </footer>
+
+
+  <!--  Scripts-->
+  <script src="./jquery/jquery.min.js"></script>
+  <script src="js/materialize.js"></script>
+  <script src="js/init.js"></script>
+
+  <script>
+    $(document).ready(() => {
+      index(card);
+    });
+
+    const card = [
+    {
+      icon: "fa fa-horse",
+      type: "fontawesome",
+      description: "2 caballos 20$ por 3hrs c/u",
+    },
+    {
+      icon: "fa fa-biking",
+      type: "fontawesome",
+      description: "2 4moto 15$ por hrs c/u",
+    },
+    {
+      icon: "rowing",
+      type: "materialIcons",
+      description: "6 Kayak 15$ por 3hrs c/u",
+    },
+    {
+      icon: "directions_run",
+      type: "materialIcons",
+      description: "4 paddles borad 15$ por 3hrs c/u",
+    },
+    {
+      icon: "fa fa-bicycle",
+      type: "fontawesome",
+      description: "2 bike montañeras 15$ c/u por 3hrs",
+    },
+    {
+      icon: "fa fa-table-tennis",
+      type: "fontawesome",
+      description: "Maquina lanza pelotas tenis 10$ por hora.",
+    },
+    {
+      icon: "spa",
+      type: "materialIcons",
+      description: "Masajes 100$ por 4 masajes de 45 min.",
+    },
+    {
+      icon: "child_care",
+      type: "materialIcons",
+      description: "Niñera por 8 hrs de trabajo 45$. Hrs extra 15$",
+    },
+    {
+      icon: "fa fa-child",
+      type: "fontawesome",
+      description:
+        "Recredaora de niños 8 hrs 45$. Grupo maximo 6 niños. Hora extra 10$",
+    },
+    {
+      icon: "fa fa-user-friends",
+      type: "fontawesome",
+      description:
+        "Profesor de tenis 60$ por dia, con 2 hrs de tenis al dia incluida, 15$ por hora extra",
+    },
+    {
+      icon: "fa fa-swimming-pool",
+      type: "fontawesome",
+      description:
+        "Profesores de natación 45$ para niños y adultospor dia, con 4 hrs de clases, horas extras a 10$",
+    },
+    {
+      icon: "fa fa-truck",
+      type: "fontawesome",
+      description:
+        "Delivery al pueblo boca de uchire 25$ (24 km de distancia recorrida)",
+    },
+    {
+      icon: "fa fa-fire",
+      type: "fontawesome",
+      description: "Leña para preparaciones al aire libre durante su estadia $12",
+    },
+    ];
+
+    const index = (data) =>  {
+      data.map((item, key) => {
+
+        var icon = '';
+
+        if(item.type == 'fontawesome'){
+          icon = `<i class="${item.icon} serviceIcon"></i>`;
+        }else{
+          icon = `<i class="material-icons serviceIcon">${item.icon}</i>`;
+        }
+
+        $('#divLoad').append(`
+          <div class="col s6">
+            <div class="card center-align">
+              <div class="card-content">
+                <h2>${icon}</h2>
+                <span class="activator grey-text text-darken-4">${item.description}</span>
+              </div>
+            </div>
+          </div>
+        `);
+      });
+    }
+  </script>
+
+  </body>
+</html>

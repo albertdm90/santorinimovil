@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <title>Santorini</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link rel="stylesheet" href="./fontawesome/css/all.min.css">
+</head>
+<body>
+  <nav class="backgroundTransparent" role="navigation">
+    <div class="nav-wrapper container">
+      <a id="logo-container" href="#" class="brand-logo">
+        <img src="./images/logost.png" width="150px" alt="" style="margin-top: 5px;">
+      </a>
+    </div>
+  </nav>
+
+  <div class="" style="margin-bottom: 80px;">
+    <div class="section">
+
+
+      <div class="row backggroundPage">
+        <div class="col s2 indigo" style="height: 100vh;"></div>
+        <div class="col s10" style="height: 100vh;"></div>
+      </div>
+
+      <div class="row" id="divLoad"></div>
+
+    </div>
+    <br><br>
+  </div>
+
+  <footer class="page-footer blue-grey lighten-5 page-footer-icons">
+    <div class="container">
+      <div class="row">
+        <a href="./index.html">
+          <div class="col s2 center-align">
+            <i class="material-icons iconsFooter">home</i>
+            <p class="black-text pIcons">Inicio</p>
+          </div>
+        </a>
+        <a href="./fastfood.html">
+          <div class="col s3 center-align">
+            <i class="material-icons iconsFooter">fastfood</i>
+            <p class="black-text pIcons">Bebidas y comidas</p>
+          </div>
+        </a>
+        <a href="./training.html">
+          <div class="col s3 center-align">
+            <i class="material-icons iconsFooter">sports_soccer</i>
+            <p class="black-text pIcons">Entramientos</p>
+          </div>
+        </a>
+        <a href="./service.html">
+          <div class="col s2 center-align">
+            <i class="material-icons iconsFooter">list</i>
+            <p class="black-text pIcons">Servicios</p>
+          </div>
+        </a>
+        <a href="./help.html">
+          <div class="col s2 center-align">
+            <i class="material-icons iconsFooter">help_outline</i>
+            <p class="black-text pIcons">Ayuda</p>
+          </div>  
+        </a>
+      </div>
+    </div>
+  </footer>
+
+
+  <!--  Scripts-->
+  <script src="./jquery/jquery.min.js"></script>
+  <script src="js/materialize.js"></script>
+  <script src="js/init.js"></script>
+
+  <script>
+    $(document).ready(() => {
+      index(card);
+    });
+
+    const card = [
+  {
+    title: "Servicios adicionales",
+    data: [
+      {
+        icon: "crop_3_2",
+        type: "materialIcons",
+        description: "Hielo durante su estadia  $20",
+      },
+      {
+        icon: "fa fa-cookie",
+        type: "fontawesome",
+        description: "Coco frio $2 c/u ",
+      },
+      {
+        icon: "fa fa-coffee",
+        type: "fontawesome",
+        description: "Cafe maquina Nespreso $2.5 por capsula",
+      },
+    ],
+  },
+  {
+    title: "Cocteles",
+    data: [
+      {
+        icon: "fa fa-glass-martini-alt",
+        type: "fontawesome",
+        description: "Santorini blue. $7",
+      },
+      {
+        icon: "fa fa-cocktail",
+        type: "fontawesome",
+        description: "Piña colada $7",
+      },
+      {
+        icon: "fa fa-wine-bottle",
+        type: "fontawesome",
+        description: "Aperol. $8",
+      },
+      {
+        icon: "fa fa-glass-martini-alt",
+        type: "fontawesome",
+        description: "Santorini terra $7",
+      },
+      { icon: "local_drink", type: "materialIcons", description: "Mojito. $6" },
+      {
+        icon: "fa fa-glass-whiskey",
+        type: "fontawesome",
+        description: "Caipiriña $6",
+      },
+      {
+        icon: "fa fa-glass-martini-alt",
+        type: "fontawesome",
+        description: "Kaiprioska $7",
+      },
+      {
+        icon: "fa fa-cocktail",
+        type: "fontawesome",
+        description: "Margarita tradicional 6",
+      },
+      {
+        icon: "fa fa-glass-martini-alt",
+        type: "fontawesome",
+        description:
+          "Naiguata coco/piña variado $4, (parchita, patilla y fruit punch gatorade)",
+      },
+      {
+        icon: "fa fa-glass-whiskey",
+        type: "fontawesome",
+        description: "Vodka tonic con conchita limon $6",
+      },
+    ],
+  },
+  {
+    title: "Bebidas sin alcohol",
+    data: [
+      {
+        icon: "fa fa-wine-glass",
+        type: "fontawesome",
+        description: "Piña colada. $3",
+      },
+      {
+        icon: "fa fa-wine-glass-alt",
+        type: "fontawesome",
+        description: "Cocada $3",
+      },
+      {
+        icon: "fa fa-cookie",
+        type: "fontawesome",
+        description: "Coco frio. $2",
+      },
+      {
+        icon: "fa fa-wine-glass",
+        type: "fontawesome",
+        description: "Limonada menta $3",
+      },
+    ],
+  },
+];
+
+    const index = (data) =>  {
+      data.map((item, key) => {
+
+        var carditem = '';
+
+        item.data.map((item2, key2) => {
+          var icon = ''
+          if(item2.type == 'fontawesome'){
+            icon = `<i class="${item2.icon} serviceIcon"></i>`;
+          }else{
+            icon = `<i class="material-icons serviceIcon">${item2.icon}</i>`;
+          }
+
+          carditem = `${carditem}
+            <div class="col s6">
+              <div class="card center-align">
+                <div class="card-content">
+                  <h2>${icon}</h2>
+                  <span class="activator grey-text text-darken-4">${item2.description}</span>
+                </div>
+              </div>
+            </div>
+          `;
+        });
+
+
+        $('#divLoad').append(`
+          <div class="col s12 center-align">
+            <h5>${item.title}</h5>
+            <div class="row">
+            ${carditem}
+            </div>
+          </div>
+        `);
+      });
+    }
+  </script>
+
+  </body>
+</html>

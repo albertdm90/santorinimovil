@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <title>Santorini</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link rel="stylesheet" href="./fontawesome/css/all.min.css">
+</head>
+<body>
+  <nav class="backgroundTransparent" role="navigation">
+    <div class="nav-wrapper container">
+      <a id="logo-container" href="#" class="brand-logo">
+        <img src="./images/logost.png" width="150px" alt="" style="margin-top: 5px;">
+      </a>
+    </div>
+  </nav>
+
+  <div class="" style="margin-bottom: 80px;">
+    <div class="section">
+
+
+      <div class="row backggroundPage">
+        <div class="col s2 indigo" style="height: 100vh;"></div>
+        <div class="col s10" style="height: 100vh;"></div>
+      </div>
+
+      <div class="row" id="divLoad"></div>
+
+    </div>
+    <br><br>
+  </div>
+
+  <footer class="page-footer blue-grey lighten-5 page-footer-icons">
+    <div class="container">
+      <div class="row">
+        <a href="./index.html">
+          <div class="col s2 center-align">
+            <i class="material-icons iconsFooter">home</i>
+            <p class="black-text pIcons">Inicio</p>
+          </div>
+        </a>
+        <a href="./fastfood.html">
+          <div class="col s3 center-align">
+            <i class="material-icons iconsFooter">fastfood</i>
+            <p class="black-text pIcons">Bebidas y comidas</p>
+          </div>
+        </a>
+        <a href="./training.html">
+          <div class="col s3 center-align">
+            <i class="material-icons iconsFooter">sports_soccer</i>
+            <p class="black-text pIcons">Entramientos</p>
+          </div>
+        </a>
+        <a href="./service.html">
+          <div class="col s2 center-align">
+            <i class="material-icons iconsFooter">list</i>
+            <p class="black-text pIcons">Servicios</p>
+          </div>
+        </a>
+        <a href="./help.html">
+          <div class="col s2 center-align">
+            <i class="material-icons iconsFooter">help_outline</i>
+            <p class="black-text pIcons">Ayuda</p>
+          </div>  
+        </a>
+      </div>
+    </div>
+  </footer>
+
+
+  <!--  Scripts-->
+  <script src="./jquery/jquery.min.js"></script>
+  <script src="js/materialize.js"></script>
+  <script src="js/init.js"></script>
+
+  <script>
+    $(document).ready(() => {
+      index(card);
+    });
+
+    const card = [
+      {
+        icon: "fa fa-table-tennis",
+        type: "fontawesome",
+        description: "Raquetas de tenis ",
+      },
+      {
+        icon: "fa fa-table-tennis",
+        type: "fontawesome",
+        description: "Raquetas de playa",
+      },
+      {
+        icon: "fa fa-volleyball-ball",
+        type: "fontawesome",
+        description: "Pelotas de voliball ",
+      },
+      {
+        icon: "fa fa-basketball-ball",
+        type: "fontawesome",
+        description: "Pelota de basketball ",
+      },
+      {
+        icon: "fa fa-dot-circle",
+        type: "fontawesome",
+        description: "Bolas criollas",
+      },
+      {
+        icon: "fa fa-umbrella-beach",
+        type: "fontawesome",
+        description: 'Juego de playa "lanza saquito arena" “bean bag toss”',
+      },
+      { 
+        icon: "fa fa-table-tennis",
+        type: "fontawesome",
+        description: "Cancha de tenis" },
+      {
+        icon: "fa fa-volleyball-ball",
+        type: "fontawesome",
+        description: "Cancha voliball y basketball ",
+      },
+      { icon: "fa fa-fish", type: "fontawesome", description: "Muelle de pesca" },
+      {
+        icon: "fa fa-dot-circle",
+        type: "fontawesome",
+        description: "Cancha de bolas criollas",
+      },
+      {
+        icon: "fa fa-chess",
+        type: "fontawesome",
+        description: "Ajedrez, dominó, cartas",
+      },
+      {
+        icon: "fa fa-horse-head",
+        type: "fontawesome",
+        description: "Vista a la granja",
+      },
+    ];
+
+    const index = (data) =>  {
+      data.map((item, key) => {
+
+        var icon = '';
+
+        if(item.type == 'fontawesome'){
+          icon = `<i class="${item.icon} serviceIcon"></i>`;
+        }else{
+          icon = `<i class="material-icons serviceIcon">${item.icon}</i>`;
+        }
+
+        $('#divLoad').append(`
+          <div class="col s6">
+            <div class="card center-align">
+              <div class="card-content">
+                <h2>${icon}</h2>
+                <span class="activator grey-text text-darken-4">${item.description}</span>
+              </div>
+            </div>
+          </div>
+        `);
+      });
+    }
+  </script>
+
+  </body>
+</html>

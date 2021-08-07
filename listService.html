@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <title>Santorini</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+</head>
+<body>
+  <nav class="backgroundTransparent" role="navigation">
+    <div class="nav-wrapper container">
+      <a id="logo-container" href="#" class="brand-logo">
+        <img src="./images/logost.png" width="150px" alt="" style="margin-top: 5px;">
+      </a>
+    </div>
+  </nav>
+
+  <div class="">
+    <div class="section">
+
+
+      <div class="row backggroundPage">
+        <div class="col s2 indigo" style="height: 100vh;">
+          <p class="white-text" style="position: absolute; bottom: 20px;">© 2021</p>
+        </div>
+      </div>
+
+      <div class="row" id="divLoad" style="z-index: 100px;">
+        
+      </div>
+
+    </div>
+    <br><br>
+  </div>
+
+  <footer class="page-footer white" style="z-index: -2;">
+    <div class="container">
+      <div class="row">
+        <div class="col s2 center-left">
+         
+
+
+        </div>
+        <div class="col l3 s10">
+          <ul>
+            <li><a class="white-black" href="https://santorinibdu.com.ve">santorinibdu.com.ve</a></li>
+          </ul>
+        </div>
+       
+      </div>
+    </div>
+  </footer>
+
+
+  <!--  Scripts-->
+  <script src="./jquery/jquery.min.js"></script>
+  <script src="js/materialize.js"></script>
+  <script src="js/init.js"></script>
+
+  <script>
+    $(document).ready(() => {
+      index(card);
+    });
+
+    const card = [
+      { title: "Servicios", url: "service.html" },
+      { title: "Entrenamiento", url: "training.html" },
+      { title: "Comidas y bebidas", url: "fastfood.html" },
+      { title: "Ayuda", url: "help.html" },
+    ];
+
+    const index = (data) =>  {
+      data.map((item, key) => {
+        $('#divLoad').append(`
+          <div class="col s10 offset-s2">
+            <a href="./${item.url}">
+              <div class="card">
+                <div class="card-content">
+                  <span class="card-title activator grey-text text-darken-4">${item.title}</span>
+                </div>
+              </div>
+            </a>
+          </div>
+        `);
+      });
+    }
+  </script>
+
+  </body>
+</html>
